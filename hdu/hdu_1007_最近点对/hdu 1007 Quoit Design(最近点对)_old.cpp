@@ -21,6 +21,7 @@ struct node
 
 node tnd[M];
 double res;
+int n;
 int point_1,point_2;
 double x[M],y[M];
 
