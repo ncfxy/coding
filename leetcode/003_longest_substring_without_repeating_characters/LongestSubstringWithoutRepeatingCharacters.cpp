@@ -1,7 +1,7 @@
 /*
  * AddTwoNumbers.cpp
  *
- *  Created on: 2016Äê1ÔÂ27ÈÕ
+ *  Created on: 2016ï¿½ï¿½1ï¿½ï¿½27ï¿½ï¿½
  *      Author: ncfxy
  */
 
@@ -12,14 +12,6 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-
-struct ListNode {
-	int val;
-	ListNode *next;
-	ListNode(int x) :
-			val(x), next(NULL) {
-	}
-};
 
 class Solution {
 public:
