@@ -6,28 +6,19 @@
 var twoSum = function (nums, target) {
     var ans = [];
     var myMap = {};
-    for (var i = 0; i < nums.length;i++){
-        if (Object.keys(myMap).indexOf(nums[i].toString()) != -1) {
-            myMap[nums[i]].push(i);
-        } else {
-            myMap[nums[i]] = [i];
-        }
-    }
-
-    var keys = Object.keys(myMap);
-    for (var i = 0; i < keys.length; i++){
-        var key = keys[i];
-        temp = target - key;
-        if (keys.indexOf(temp.toString()) != -1) {
+    nums.forEach(function(num, index){
+        myMap[num] ? myMap[num].push(index) : myMap[num] = [index];
+    });
+    var isBreak = false;
+    Object.keys(myMap).forEach(function(key){
+        if(isBreak)return;
+        var temp = target - key;
+        if(myMap[temp]){
             ans.push(myMap[key][0]);
-            if (temp == key) {
-                ans.push(myMap[key][1]);
-            } else {
-                ans.push(myMap[temp][0]);
-            }
-            break;
+            ans.push(temp == key ? myMap[key][1] : myMap[temp][0]);
+            isBreak = true;
         }
-    }
+    });
     ans.sort();
     return ans;
 };
