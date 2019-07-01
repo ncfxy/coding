@@ -1,7 +1,7 @@
 /*
  * AddTwoNumbers.cpp
  *
- *  Created on: 2016Äê1ÔÂ27ÈÕ
+ *  Created on: 2016ï¿½ï¿½1ï¿½ï¿½27ï¿½ï¿½
  *      Author: ncfxy
  */
 
@@ -28,8 +28,6 @@ public:
 		ListNode* ans = l1, *l1_father,*l2_father;
 		while (l1 != NULL && l2 != NULL) {
 			l1->val = l1->val + l2->val + addExtra;
-			cout << l1->val <<endl;
-			cout << addExtra << endl;
 			addExtra = l1->val / 10;
 			l1->val = l1->val % 10;
 			l1_father = l1;
