@@ -29,24 +29,17 @@ var addTwoNumbers = function (l1, l2) {
         l2 = l2.next;
         delete father2;
     }
-    if(l2 == null){
-        while(l1 != null){
-            l1.val = l1.val + extra;
-            extra = Math.floor(l1.val / 10);
-            l1.val = l1.val % 10;
-            father1 = l1;
-            l1 = l1.next;
-        }
-    } else {
+    if(l1 == null){
         father1.next = l2;
         l1 = l2;
-        while(l1 != null){
-            l1.val = l1.val + extra;
-            extra = Math.floor(l1.val / 10);
-            l1.val = l1.val % 10;
-            father1 = l1;
-            l1 = l1.next;
-        }
+    }
+
+    while(l1 != null){
+        l1.val = l1.val + extra;
+        extra = Math.floor(l1.val / 10);
+        l1.val = l1.val % 10;
+        father1 = l1;
+        l1 = l1.next;
     }
     if(extra > 0) {
         var newNode = new ListNode(extra);
@@ -58,11 +51,10 @@ var addTwoNumbers = function (l1, l2) {
 function test() {
     function outputListNode(list){
         var result = '';
-        while(list.next != null){
+        while(list != null){
             result += list.val;
             list = list.next;
         }
-        result += list.val;
         console.log(result);
     };
     
