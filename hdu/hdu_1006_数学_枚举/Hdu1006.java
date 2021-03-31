@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Hdu1006 {
 
     double allDayTime = 12 * 60 * 60;
     double eps = 0.0000001;
@@ -18,7 +18,7 @@ public class Main {
     double periodMS = 360.0 / speedMS;
     
     public static void main(String[] args){
-        Main main = new Main();
+        Hdu1006 main = new Hdu1006();
         main.start();
     }
 
@@ -69,6 +69,5 @@ public class Main {
     public String formatDouble(double num) {
         return String.format("%.3f", num);
     }
-
 
 }

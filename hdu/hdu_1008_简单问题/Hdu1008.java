@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class Main {
+public class Hdu1008 {
 
     public static void main(String[] args){
-        Main main = new Main();
+        Hdu1008 main = new Hdu1008();
         main.start();
     }
 

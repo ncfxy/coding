@@ -7,7 +7,7 @@ typedef struct{
     int sum;
 }TreeNode;
 
-class NcfxySegmentTree{ // Ïß¶ÎÊ÷
+class NcfxySegmentTree{ // çº¿æ®µæ ‘
     private:
         TreeNode* nodes;
         int* data;
@@ -16,16 +16,16 @@ class NcfxySegmentTree{ // Ïß¶ÎÊ÷
             this->nodes = nodes;
             this->data = data;
         }
-        void build(int nodeIndex, int begin, int end){//¹¹ÔìÏß¶ÎÊ÷
-            if(begin == end){// Ö»ÓÐÒ»¸öÔªËØÖ±½Ó±£´æÐÅÏ¢
+        void build(int nodeIndex, int begin, int end){//æž„é€ çº¿æ®µæ ‘
+            if(begin == end){// åªæœ‰ä¸€ä¸ªå…ƒç´ ç›´æŽ¥ä¿å­˜ä¿¡æ¯
                 nodes[nodeIndex].left = nodes[nodeIndex].right = begin;
                 nodes[nodeIndex].sum = data[begin];
             }else{
-                // µÝ¹é¹¹Ôì×óÓÒ×ÓÊ÷
+                // é€’å½’æž„é€ å·¦å³å­æ ‘
                 build(2*nodeIndex, begin, (begin+end)/2);
                 build(2*nodeIndex+1, (begin+end)/2+1, end);
 
-                // »ØËÝµÃµ½µ±Ç°½ÚµãµÄÐÅÏ¢
+                // å›žæº¯å¾—åˆ°å½“å‰èŠ‚ç‚¹çš„ä¿¡æ¯
                 nodes[nodeIndex].left = begin;
                 nodes[nodeIndex].right = end;
                 nodes[nodeIndex].sum = nodes[2*nodeIndex].sum + nodes[2*nodeIndex+1].sum;
@@ -34,10 +34,10 @@ class NcfxySegmentTree{ // Ïß¶ÎÊ÷
 
         int query(int nodeIndex, int begin, int end){
             int p1, p2;
-            // ²éÑ¯Çø¼äºÍÒªÇóµÄÇø¼äÃ»ÓÐ½»¼¯
+            // æŸ¥è¯¢åŒºé—´å’Œè¦æ±‚çš„åŒºé—´æ²¡æœ‰äº¤é›†
             if(nodes[nodeIndex].left > end || nodes[nodeIndex].right < begin)
                 return -1;
-            // Èç¹û½ÚµãÇø¼ä°üº¬ÔÚ²éÑ¯Çø¼äÄÚÖ±½Ó·µ»Ø
+            // å¦‚æžœèŠ‚ç‚¹åŒºé—´åŒ…å«åœ¨æŸ¥è¯¢åŒºé—´å†…ç›´æŽ¥è¿”å›ž
             if(begin <= nodes[nodeIndex].left && end >= nodes[nodeIndex].right)
                 return nodes[nodeIndex].sum;
 
@@ -58,7 +58,7 @@ class NcfxySegmentTree{ // Ïß¶ÎÊ÷
             if(changeIndex <= m)update(nodeIndex*2, changeIndex,value);
             else update(nodeIndex*2+1,changeIndex,value);
 
-            // »ØËÝ¸üÐÂ¸¸½Úµã
+            // å›žæº¯æ›´æ–°çˆ¶èŠ‚ç‚¹
             nodes[nodeIndex].sum += value;
         }
 

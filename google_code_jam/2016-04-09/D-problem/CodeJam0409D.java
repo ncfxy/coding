@@ -29,7 +29,7 @@ import java.util.Scanner;
  * @version 1.0-SNAPSHOT
  * @Date 2016 2016年4月9日 上午9:45:38
  */
-public class Main {
+public class CodeJam0409D {
 	static int myMax = 100000;
 	static int cover[] = new int[myMax];
 	static Integer prime[] = new Integer[10000];

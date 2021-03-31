@@ -10,6 +10,7 @@
  * Copyright (c) 2016, ncfxy All Rights Reserved.
  */
 
+package com.ncfxy.MyAlgorithm;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,20 +28,20 @@ import java.util.Scanner;
  * @version 1.0-SNAPSHOT
  * @Date 2016 2016年4月9日 上午9:45:38
  */
-public class Main {
+public class CodeJam0409A {
 
 	// Scanner cin = new Scanner("input.txt");
 	public static void main(String[] args) throws FileNotFoundException {
 //		Scanner cin = new Scanner(System.in);
-		Scanner cin = new Scanner(new File("B-large.in"));
+		Scanner cin = new Scanner(new File("A-large.in"));
 		FileOutputStream fs = new FileOutputStream(new File("output.txt"));
 		PrintStream p = new PrintStream(fs);
 		while (cin.hasNext()) {
 			int t = cin.nextInt();
 			for (int caseNumber = 1; caseNumber <= t; caseNumber++) {
-				String n = cin.next();
-				if (n == null || n.equals("")) {
-					p.println("Case #"+caseNumber+": 0");
+				int n = cin.nextInt();
+				if (n == 0) {
+					p.println("Case #"+caseNumber+": INSOMNIA");
 				} else {
 					p.println("Case #"+caseNumber+": "+sol(n));
 				}
@@ -54,17 +55,34 @@ public class Main {
 		}
 	}
 
-	public static int sol(String n) {
-		int result = 0;
-		for(int i = 1;i < n.length();i++){
-			if(n.charAt(i) != n.charAt(i-1)){
-				result++;
+	public static int sol(int n) {
+		int location[] = new int[10];
+		Arrays.fill(location, 0);
+		for(int i = 1;i < 10000;i++){
+			int temp = n * i;
+			fillLocation(temp, location);
+			if(!haveZeroNumber(location)){
+				return temp;
 			}
 		}
-		if(n.charAt(n.length()-1) == '-'){
-			result++;
+		return 0;
+	}
+
+	public static void fillLocation(int n, int[] location) {
+		while (n > 0) {
+			int a = n % 10;
+			n /= 10;
+			location[a]++;
 		}
-		return result;
+	}
+	
+	public static boolean haveZeroNumber(int[] location){
+		for(int i = 0;i < location.length;i++){
+			if(location[i] == 0){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -23,7 +23,7 @@ import java.util.Scanner;
  * @Date 2016 2016年3月30日 下午2:39:34
  */
 
-public class Main {
+public class Hihocoder1285 {
 	
 	public static int n,m,s,t;
 	public static int inf = 0x7f7f7f7f;

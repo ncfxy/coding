@@ -33,10 +33,10 @@ class SortByY implements Comparator<Node> {
     }
 }
 
-public class Main {
+public class Hdu1007 {
     public Node nd[] = new Node[100005];
     public static void main(String[] args){
-        Main main = new Main();
+        Hdu1007 main = new Hdu1007();
         main.start();
     }
 
