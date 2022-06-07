@@ -4,3 +4,4 @@
 ## 引用
 
 - LeetCode刷题手册: <https://books.halfrost.com/leetcode/ChapterOne/>
+- labuladong 的算法小抄: <https://labuladong.gitee.io/algo/>
