@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build hdu_8208",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-g",
+        "-std=c++17",
+        "-O0",
+        "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208.cpp",
+        "-o",
+        "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

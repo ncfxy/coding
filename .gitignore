@@ -4,3 +4,6 @@
 out
 *.class
 .DS_Store
+
+# cpp编译出的结果
+a.out

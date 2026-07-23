@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug hdu_8208",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208",
+      "cwd": "${workspaceFolder}/hdu/hdu_8208_线段树",
+      "stdio": [
+        "${workspaceFolder}/hdu/hdu_8208_线段树/input.txt",
+        null,
+        null
+      ],
+      "preLaunchTask": "build hdu_8208"
+    }
+  ]
+}
