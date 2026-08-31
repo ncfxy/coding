@@ -2,16 +2,16 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build hdu_8208",
+      "label": "build cpp debug",
       "type": "shell",
       "command": "clang++",
       "args": [
         "-g",
         "-std=c++17",
         "-O0",
-        "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208.cpp",
+        "${workspaceFolder}/debug/cpp/debug.cpp",
         "-o",
-        "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208"
+        "${workspaceFolder}/debug/cpp/debug"
       ],
       "group": {
         "kind": "build",

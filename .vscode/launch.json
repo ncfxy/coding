@@ -2,17 +2,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug hdu_8208",
+      "name": "Debug cpp file",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/hdu/hdu_8208_线段树/hdu_8208",
-      "cwd": "${workspaceFolder}/hdu/hdu_8208_线段树",
+      "program": "${workspaceFolder}/debug/cpp/debug",
+      "cwd": "${workspaceFolder}/debug/cpp",
       "stdio": [
-        "${workspaceFolder}/hdu/hdu_8208_线段树/input.txt",
+        "${workspaceFolder}/debug/cpp/input.txt",
         null,
         null
       ],
-      "preLaunchTask": "build hdu_8208"
+      "preLaunchTask": "build cpp debug"
     }
   ]
 }
